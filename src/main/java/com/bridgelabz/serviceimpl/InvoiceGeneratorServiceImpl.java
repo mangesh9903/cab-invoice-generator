@@ -1,5 +1,6 @@
 package com.bridgelabz.serviceimpl;
 
+import com.bridgelabz.model.Ride;
 import com.bridgelabz.service.InvoiceGeneratorService;
 
 /*********************************************************************
@@ -25,5 +26,20 @@ public class InvoiceGeneratorServiceImpl implements InvoiceGeneratorService {
             return MINIMUM_FARE;
         else
             return totalFare;
+    }
+
+    /**
+     * Method :- Method for Calculate Fare for Multiple Rides.
+     *
+     * @param rides Passing Multiple Rides
+     * @return Returning Total Fare of Multiple Rides.
+     */
+    @Override
+    public double calculateFare(Ride[] rides) {
+        double totalFare = 0;
+        for (Ride ride : rides) {
+            totalFare = totalFare + this.calculateFare(ride.distance, ride.time);
+        }
+        return totalFare;
     }
 }

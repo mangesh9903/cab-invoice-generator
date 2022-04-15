@@ -1,5 +1,6 @@
 package com.bridgelabz.cabinvoicegeneratortest;
 
+import com.bridgelabz.model.Ride;
 import com.bridgelabz.service.InvoiceGeneratorService;
 import com.bridgelabz.serviceimpl.InvoiceGeneratorServiceImpl;
 import org.junit.Assert;

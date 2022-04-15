@@ -1,5 +1,7 @@
 package com.bridgelabz.service;
 
+import com.bridgelabz.model.Ride;
+
 /*********************************************************************
  * Purpose: Interface for Invoice Generator Service.
  *
@@ -14,4 +16,6 @@ public interface InvoiceGeneratorService {
     double MINIMUM_FARE = 5;
 
     double calculateFare(double distance, int time);
+
+    double calculateFare(Ride[] rides);
 }
