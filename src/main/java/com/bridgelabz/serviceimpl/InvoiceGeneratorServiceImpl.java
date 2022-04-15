@@ -16,11 +16,14 @@ public class InvoiceGeneratorServiceImpl implements InvoiceGeneratorService {
      *
      * @param distance Passing Input as Distance
      * @param time     Passing Input as a Time
-     * @return Returning Total Fare
+     * @return Returning totalFare Or MINIMUM_FARE
      */
     @Override
     public double calculateFare(double distance, int time) {
         double totalFare = distance * MINIMUM_COST_PER_KILOMETER + time * COST_PER_TIME;
-        return totalFare;
+        if (totalFare < MINIMUM_FARE)
+            return MINIMUM_FARE;
+        else
+            return totalFare;
     }
 }

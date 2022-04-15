@@ -11,6 +11,7 @@ package com.bridgelabz.service;
 public interface InvoiceGeneratorService {
     double MINIMUM_COST_PER_KILOMETER = 10.0;
     int COST_PER_TIME = 1;
+    double MINIMUM_FARE = 5;
 
     double calculateFare(double distance, int time);
 }
