@@ -1,5 +1,6 @@
 package com.bridgelabz.service;
 
+import com.bridgelabz.cabinvoicegeneratortest.InvoiceSummary;
 import com.bridgelabz.model.Ride;
 
 /*********************************************************************
@@ -18,4 +19,6 @@ public interface InvoiceGeneratorService {
     double calculateFare(double distance, int time);
 
     double calculateFare(Ride[] rides);
+
+    InvoiceSummary getInvoiceSummary(Ride[] rides);
 }

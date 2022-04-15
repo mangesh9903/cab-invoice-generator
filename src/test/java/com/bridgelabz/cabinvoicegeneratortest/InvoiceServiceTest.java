@@ -46,7 +46,7 @@ public class InvoiceServiceTest {
         Ride[] rides = {new Ride(2.0, 5),
                 new Ride(0.1, 1)
         };
-        InvoiceSummary summary = invoiceGeneratorService.calculateFare(rides);
+        InvoiceSummary summary = invoiceGeneratorService.getInvoiceSummary(rides);
         InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 30.0);
         Assert.assertEquals(expectedInvoiceSummary, summary);
     }

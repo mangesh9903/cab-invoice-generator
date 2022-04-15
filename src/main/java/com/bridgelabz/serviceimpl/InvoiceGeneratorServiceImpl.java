@@ -1,5 +1,6 @@
 package com.bridgelabz.serviceimpl;
 
+import com.bridgelabz.cabinvoicegeneratortest.InvoiceSummary;
 import com.bridgelabz.model.Ride;
 import com.bridgelabz.service.InvoiceGeneratorService;
 
@@ -41,5 +42,17 @@ public class InvoiceGeneratorServiceImpl implements InvoiceGeneratorService {
             totalFare = totalFare + this.calculateFare(ride.distance, ride.time);
         }
         return totalFare;
+    }
+
+    /**
+     * Method :- Method For Calculate Invoice Summary.
+     *
+     * @param rides passing total rides
+     * @return returning invoice sumaary.
+     */
+    @Override
+    public InvoiceSummary getInvoiceSummary(Ride[] rides) {
+        double totalFare = calculateFare(rides);
+        return new InvoiceSummary(rides.length, totalFare);
     }
 }
