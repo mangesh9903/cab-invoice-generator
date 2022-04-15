@@ -1,9 +1,13 @@
 package com.bridgelabz.cabinvoicegeneratortest;
 
+import com.bridgelabz.service.InvoiceGeneratorService;
+import com.bridgelabz.serviceimpl.InvoiceGeneratorServiceImpl;
 import org.junit.Assert;
+import org.junit.Test;
 
 public class InvoiceServiceTest {
 
+    @Test
     public void givenDistanceAndTime_shouldReturnTotalFare() {
         InvoiceGeneratorService invoiceGeneratorService = new InvoiceGeneratorServiceImpl();
         double distance = 2.0;
